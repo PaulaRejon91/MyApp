@@ -28,7 +28,6 @@ import retrofit2.Retrofit
 class MainActivity : AppCompatActivity() {
 
 
-
     private var retrofit: Retrofit = NetworkLayer.provideRetrofit()
     private var retrofitApi = NetworkLayer.provideCharacterApiClient(retrofit)
 
@@ -41,6 +40,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         searchCharacter("a") //para que recargue una lista sin poner nada en searchview
         initRecyclerView()
+        binding.btnBack.setOnClickListener { navigateToHome() }
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun searchCharacter(query: String) {

@@ -1,6 +1,7 @@
 package com.example.myapp.ui.view
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -39,8 +40,14 @@ class CharacterActivity : AppCompatActivity() {
         setContentView(binding.root)
         val id: Int = intent.getIntExtra(CHARACTER_ID,0)
         getCharacterDetail(id)
+        binding.btnBack.setOnClickListener { navigateToHome() }
 
 
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun createdUI(response: CharacterModel) {

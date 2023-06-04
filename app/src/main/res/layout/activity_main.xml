@@ -40,11 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewMain"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="<-- Atrás"
-
-        />
-
-
+        android:text="Atrás"       />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
